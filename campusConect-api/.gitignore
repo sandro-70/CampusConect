@@ -1,0 +1,17 @@
+.env
+node_modules
+
+## Descargar psql y orm
+## npx sequelize-cli init
+## npm install --save-dev sequelize-cli
+
+## En config.json copiar lo que esta dentro de development
+##require("dotenv").config()
+## const{DB_USERNAME,DB_PASSWORD,DB_HOST,DB_DIALECT,DB_NAME_DEV} = process.env;
+## meter todo en module.export{ //config.json }
+# quitar comillas a nombres development,test y production
+## En .env crear los datos que queremos de acuerdo a lo que habia en development, 
+##crear nombre para cada base de datos
+## npm install dotenv --save
+
+##import cost extension
