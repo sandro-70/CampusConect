@@ -1,7 +1,5 @@
-'use strict';
-const {
-  Model
-} = require('sequelize');
+"use strict";
+const { Model } = require("sequelize");
 module.exports = (sequelize, DataTypes) => {
   class Publicaciones extends Model {
     /**
@@ -13,28 +11,30 @@ module.exports = (sequelize, DataTypes) => {
       // define association here
     }
   }
-  Publicaciones.init({
-    //añadir el id del usuario
-    usuarioId: {
-      type: DataTypes.INTEGER,
-      references: {
-        model: 'Usuarios',
-        key: 'id'
-      }
+  Publicaciones.init(
+    {
+      //añadir el id del usuario
+      usuarioId: {
+        type: DataTypes.INTEGER,
+        references: {
+          model: "Usuarios",
+          key: "id",
+        },
+      },
+      titulo: DataTypes.STRING,
+      contenido: DataTypes.STRING,
+      categoria: DataTypes.STRING,
+      fecha: DataTypes.STRING,
     },
-    titulo: DataTypes.STRING,
-    contenido: DataTypes.STRING,
-    categoria: DataTypes.STRING,
-    fecha: DataTypes.STRING
-  }, {
-    sequelize,
-    modelName: 'Publicaciones',
-  });
-  publicaciones.associate = models => {
-    publicaciones.belongsTo(models.Usuarios, 
-      { 
-        foreignKey: 'usuarioId' 
-      });
-  }
+    {
+      sequelize,
+      modelName: "Publicaciones",
+    }
+  );
+  Publicaciones.associate = (models) => {
+    Publicaciones.belongsTo(models.Usuarios, {
+      foreignKey: "usuarioId",
+    });
+  };
   return Publicaciones;
 };
